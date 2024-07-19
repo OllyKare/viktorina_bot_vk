@@ -16,7 +16,7 @@ def viktorina(vk, event, user_id):
             slovar[user_id]['right_answer'] += 1
         slovar[user_id]['number_of_question'] += 1
         slovar[user_id]['user_state'] = 'waiting question'
-    if slovar[user_id]['number_of_question'] < 2:
+    if slovar[user_id]['number_of_question'] < len(data['questions']):
         quest = data["questions"][slovar[user_id]['number_of_question']]['question']
         keyboard = VkKeyboard(inline=True)
         for value in data["questions"][slovar[user_id]['number_of_question']]["answers"]:
