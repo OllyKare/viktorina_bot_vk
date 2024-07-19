@@ -46,8 +46,8 @@
     {
       "id": 7,
       "question": "2+2/2=...",
-      "answers": [2, 3],
-      "right": 3
+      "answers": ["2", "3"],
+      "right": "3"
     },
     {
       "id": 8,
