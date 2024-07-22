@@ -19,8 +19,10 @@ def viktorina(vk, event, user_id):
     if slovar[user_id]['number_of_question'] < len(data['questions']):
         quest = data["questions"][slovar[user_id]['number_of_question']]['question']
         keyboard = VkKeyboard(inline=True)
-        for value in data["questions"][slovar[user_id]['number_of_question']]["answers"]:
+        for ind, value in enumerate(data["questions"][slovar[user_id]['number_of_question']]["answers"]):
             keyboard.add_button(value, color=VkKeyboardColor.PRIMARY)
+            if ind < len(data["questions"][slovar[user_id]['number_of_question']]["answers"]) - 1:
+                keyboard.add_line()
         vk.messages.send(user_id=user_id,
                          message=quest,
                          random_id=random.randint(0, 2 ** 64),
